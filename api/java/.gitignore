@@ -1,0 +1,7 @@
+# Built artefacts
+/target/
+
+# Eclipse settings
+/.settings/
+.classpath
+.project
