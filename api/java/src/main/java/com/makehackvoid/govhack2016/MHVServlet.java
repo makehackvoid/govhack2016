@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.eclipse.jetty.http.HttpStatus;
 
+import com.makehackvoid.govhack2016.api.EventApi;
+import com.makehackvoid.govhack2016.api.ParkingLotApi;
+
 /**
  * MHV Main Servlet.
  * @author Yiannis Paschalidis
@@ -19,7 +22,16 @@ public class MHVServlet extends HttpServlet
     @Override
     protected void doGet(final HttpServletRequest req, final HttpServletResponse resp) throws ServletException, IOException
     {
-        resp.getOutputStream().write("HELLO WORLD".getBytes("UTF-8"));
+        String path = req.getPathInfo();
+
+        if ("/events".equals(path))
+        {
+            EventApi.handle(req, resp);
+        }
+        else if ("/lots".equals(path))
+        {
+            ParkingLotApi.handle(req, resp);
+        }
     }
 
     /** {@inhheritDoc} */
