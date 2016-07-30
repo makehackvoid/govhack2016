@@ -1,9 +1,15 @@
+// MHV GovHack 2016
+// JS interface to Java API
+
+// Base url for MHV Java API
+var mhvApiBaseUrl = "https://govhack2016.makehackvoid.com/api/java/"
+
 // Get all events from <from> to <to>
 // They'll be passed to the given callback as an array.
 function mhvApiGetEvents(from, to, callback) 
 {
 	var xmlhttp = new XMLHttpRequest();
-	var url = "https://govhack2016.makehackvoid.com/api/java/events?from=" + from + "&to=" + to;
+	var url = mhvApiBaseUrl + "events?from=" + from + "&to=" + to;
 
 	xmlhttp.onreadystatechange = function() 
 	{
@@ -23,7 +29,7 @@ function mhvApiGetEvents(from, to, callback)
 function mhvApiGetEvent(closestTo, callback) 
 {
 	var xmlhttp = new XMLHttpRequest();
-	var url = "https://govhack2016.makehackvoid.com/api/java/events?closest=" + closestTo;
+	var url = mhvApiBaseUrl + "events?closest=" + closestTo;
 
 	xmlhttp.onreadystatechange = function() 
 	{
@@ -43,7 +49,7 @@ function mhvApiGetEvent(closestTo, callback)
 function mhvApiGetLots(callback) 
 {
 	var xmlhttp = new XMLHttpRequest();
-	var url = "https://govhack2016.makehackvoid.com/api/java/lots";
+	var url = mhvApiBaseUrl + "lots";
 
 	xmlhttp.onreadystatechange = function() 
 	{
@@ -63,7 +69,7 @@ function mhvApiGetLots(callback)
 function mhvApiGetLot(lotCode, callback) 
 {
 	var xmlhttp = new XMLHttpRequest();
-	var url = "https://govhack2016.makehackvoid.com/api/java/lots?lot=" + lot;
+	var url = mhvApiBaseUrl + "lots?lot=" + lot;
 
 	xmlhttp.onreadystatechange = function() 
 	{

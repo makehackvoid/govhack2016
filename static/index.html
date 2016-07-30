@@ -25,7 +25,85 @@
     <!--[if lt IE 9]><script src="././assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="./js/ie-emulation-modes-warning.js"></script>
     <script src="./js/custom_scrips.js"></script>
-
+    <script src="./js/mhv-api.js"></script>
+	
+	<script>
+		/*
+		mhvApiGetEvents(1464696503093, 1464696503093, function(arr) 
+		{
+			var out = "";
+			var i;
+			for(i = 0; i < arr.length; i++) 
+			{
+				if (arr[i].eventType == "news")
+				{
+					out += arr[i].eventType + '--' + arr[i].headLine + '\n';
+				}
+				else if (arr[i].eventType == "roadDeath")
+				{
+					out += arr[i].eventType + '--' + arr[i].state + '\n';
+				}
+				else if (arr[i].eventType == "park")
+				{
+					out += arr[i].eventType + '--' + arr[i].type + '\n';
+				}
+			}
+			
+			alert(out);
+		});
+		mhvApiGetEvents(1459432811000, 1459432811000, function(arr) 
+		{
+			var out = "";
+			var i;
+			for(i = 0; i < arr.length; i++) 
+			{
+				if (arr[i].eventType == "news")
+				{
+					out += arr[i].eventType + '--' + arr[i].headLine + '\n';
+				}
+				else if (arr[i].eventType == "roadDeath")
+				{
+					out += arr[i].eventType + '--' + arr[i].state + '\n';
+				}
+				else if (arr[i].eventType == "park")
+				{
+					out += arr[i].eventType + '--' + arr[i].type + '\n';
+				}
+			}
+			
+			alert(out);
+		});
+		mhvApiGetEvent(1464696503093, function(arr) 
+		{
+			var out = "";
+			var i;
+			for(i = 0; i < arr.length; i++) 
+			{
+				if (arr[i].eventType == "news")
+				{
+					out += arr[i].eventType + '--' + arr[i].headLine + '\n';
+				}
+				else if (arr[i].eventType == "roadDeath")
+				{
+					out += arr[i].eventType + '--' + arr[i].state + '\n';
+				}
+			}
+			
+			alert(out);
+		});
+		mhvApiGetLots(function(arr) 
+		{
+			var out = "";
+			var i;
+			for(i = 0; i < arr.length; i++) 
+			{
+				out += arr[i].lotCode + '--' + arr[i].street + '\n';
+			}
+			
+			alert(out);
+		});
+		*/
+	</script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
