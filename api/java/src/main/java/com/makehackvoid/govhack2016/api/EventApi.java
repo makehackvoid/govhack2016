@@ -204,15 +204,15 @@ public class EventApi
     private static void writeParkingEvent(final ParkingEvent parkingEvent, final Writer writer) throws IOException
     {
         writer.write("{\n \"eventType\":\"park\"");
-        writer.write(",\n \"lotCode\": ");
+        writer.write(",\n \"lotCode\":");
         writer.write(String.valueOf(parkingEvent.getLotCode()));
         writer.write(",\n \"bayNumber\":");
         writer.write(String.valueOf(parkingEvent.getBayNumber()));
         writer.write(",\n \"bayName\":\"");
         writer.write(parkingEvent.getBayName());
-        writer.write("\",\n \"type\":");
+        writer.write("\",\n \"type\":\"");
         writer.write(parkingEvent.getType().name().toLowerCase());
-        writer.write(",\n \"time\":");
+        writer.write("\",\n \"time\":");
         writer.write(String.valueOf(parkingEvent.getTime()));
         writer.write("\n}");
     }
