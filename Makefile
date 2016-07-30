@@ -1,6 +1,4 @@
-
-
-api/java/target/govhack2016-java-api.jar: api/java/
+api/java/target/govhack2016-java-api.jar: api/java/src/* $(shell find api/java/src -type f)
 	mkdir -p /tmp/m2/repository
 	mkdir -p /tmp/java-api
 	cd api/java && docker build -t java-api-builder .
