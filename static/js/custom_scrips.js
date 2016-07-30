@@ -62,11 +62,9 @@ if (tick < 60) {
  if (min > 60) {
      hour = hour +1;
      min = 0;
-     alert(day & " " & hour & " " & min & " " & sec );
  }
  if ( hour > 24){
   day = day +1;
-  seekbar.value = day
   hour = 0;
    }
 }else if (tick > 60){   
@@ -83,12 +81,12 @@ if (tick < 60) {
    }
  if ( hour > 24){
       day = day +1;
-  seekbar.value = day
   hour = 0
    }
 }
 
-//alert(day + " " + hour + " " + min + " " + sec);
+seekbar.value = (day*24*60*60)+(hour*60*60)+(min*60)+sec
+
 }
 
 
