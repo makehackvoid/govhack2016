@@ -8,6 +8,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.zip.ZipInputStream;
 
 import com.makehackvoid.govhack2016.Util;
 import com.makehackvoid.govhack2016.datasets.parking.ParkingEvent.Type;
@@ -30,7 +31,7 @@ public class ParkingEvents
     static
     {
         log.log(Level.INFO, "Reading parking events");
-        readData("/datasets/parking/SmartParking_History.csv");
+        readData("/datasets/parking/SmartParking_History.zip");
     }
 
     /** Prevent instantiation of this utility class. */
@@ -49,7 +50,9 @@ public class ParkingEvents
 
         try
         {
-            reader = new CSVReader(new InputStreamReader(ParkingEvents.class.getResourceAsStream(path)));
+            ZipInputStream zis = new ZipInputStream(ParkingEvents.class.getResourceAsStream(path));
+            zis.getNextEntry();
+            reader = new CSVReader(new InputStreamReader(zis));
 
             // Skip header
             reader.readNext();
