@@ -83,6 +83,9 @@ public class MHVApp
         log.log(Level.INFO, "Server started");
     }
 
+    /**
+     * Initialises the data sets.
+     */
     private static void initialiseDataSets()
     {
         // Initialise the data sets.
@@ -145,5 +148,10 @@ public class MHVApp
         }
 
         return props;
+    }
+
+    public static String getConfigParam(final String key, final String defolt)
+    {
+        return CONFIG.getProperty(key, defolt);
     }
 }

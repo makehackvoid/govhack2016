@@ -92,6 +92,7 @@ public class ParkingLots
 
     /**
      * Retrieves a parking lot by its lot code.
+     *
      * @param lotCode the lot code.
      * @return the ParkingLot for the given lot code, or null if not found.
      */

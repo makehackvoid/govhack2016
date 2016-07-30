@@ -15,12 +15,17 @@ import com.makehackvoid.govhack2016.datasets.parking.ParkingLot;
 import com.makehackvoid.govhack2016.datasets.parking.ParkingLots;
 
 /**
- * Parking Lot API - returns parking lots.
+ * Parking Lot API - retrieves parking lot details.
  *
  * @author Yiannis Paschalidis
  */
-public class ParkingLotApi
+public final class ParkingLotApi
 {
+    /** Prevent instantiation of this utility class. */
+    private ParkingLotApi()
+    {
+    }
+
     /**
      * Handles a request to the Parking lot API.
      * @param req the HTTP request.

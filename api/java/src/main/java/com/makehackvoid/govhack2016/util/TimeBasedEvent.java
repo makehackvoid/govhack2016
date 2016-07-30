@@ -3,7 +3,7 @@ package com.makehackvoid.govhack2016.util;
 import java.util.Comparator;
 
 /**
- * Inteface for time-based events.
+ * Interface for time-based events.
  *
  * @author Yiannis Paschalidis
  */

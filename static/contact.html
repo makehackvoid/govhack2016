@@ -19,13 +19,12 @@
     <link href="./css/custom.css" rel="stylesheet">
     <script src="./js/d3.v3.min.js"></script>
     <!-- Custom styles for this template -->
-    <!--link href="./css/jumbotron.css" rel="stylesheet"--!>
+    <!--link href="../css/jumbotron.css" rel="stylesheet"--!>
 
 <!--     <!-- Just for debugging purposes. Dojsbn't actually copy these 2 lines! --> -->
-    <!--[if lt IE 9]><script src="././assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="./js/ie-emulation-modes-warning.js"></script>
-    <script src="./js/custom_scrips.js"></script>
-
+    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -49,9 +48,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
            <ul class="nav navbar-nav">
-            <li class="active"><a href="./index.html">Home</a></li>
+            <li><a href="./index.html">Home</a></li>
             <li><a href="./about.html">About</a></li>
-            <li><a href="./contact.html">Contact</a></li>
+            <li class="active"><a href="./contact.html">Contact</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
         <!--if we want stuff in the RIGHT navbar-->
@@ -63,66 +62,25 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>MakeMackVoid Welcomes you to Farrago Parking</h1>
+        <h1>MakeHackVoid Welcomes you to Farrago Parking</h1>
         <p>Let's bring a bit of Farrago chaos to the order of parking.</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
       </div>
     </div>
 
     <div class="container">
-      <!-- Example row of columns -->
-        <div class="col-md-8">
-                <!--dis area for map-->      
-                <div id="map">
-                        <script>
-                            function initMap() {
-                                // Create a map object and specify the DOM element for display.
-                                var map = new google.maps.Map(document.getElementById('map'), {
-                                center: {lat: -35.320287, lng: 149.133161},
-                                mapTypeId: 'satellite',
-                                scrollwheel: false,
-                                zoom: 18,
-                                setTilt:45,
-                                minZoom:15,
-                                streetViewControl: false
-                                });
-                            }
-                            function initdatalayer(){
-                                                        }
-                       </script>
-                  </div>
-                  
-                 <div id="video-controls"><!--adds controls for the timing off the map play through-->      
-                   
-                    <button onclick="setcount_function()" type="button" id="play-pause">Play</button>
-                    <input type="range" id="seek-bar" value="0">
-                    <input type="range" id="Speed" min="1" max="3" step="0.1" value="1">
-
-                 </div>
-                             
-        </div>
-        
-        <div class="col-md-4">
-            <div class="row">
-            <h2>Data Block</h2>
-            
-            </div>
-            
-            <div class="row">
-            <h2>Heading</h2>
-            <p>Because we can!!!! </p>
-       </div>
-  
-
-      <hr>
-
-      <footer>
-        <p>Proudly made by <a href="https://makehackvoid.com/">MakeHackVoid</a>, Canberra's Oldest Hackerspace</p>
-      </footer>
-    </div> <!-- /container -->
-
-
-
+	<!-- Example row of columns -->
+	<div class="col-md-8">
+		<h2>Suggestions and feedback</h2>
+		<p>All feedback and suggestions are welcome.</p>
+		<p>Please feel free to post issues and ideas to our github project page, which can be found <a href="">here</a></p>
+	</div>
+	<br /><br /><br /><br /><br /><br />
+	<hr />
+	<footer>
+		<p>Proudly made by <a href="https://makehackvoid.com/">MakeHackVoid</a>, Canberra's Oldest Hackerspace</p>
+	</footer>
+	
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -131,13 +89,13 @@
         
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvXZRVV6T2jKe31BgcdL_pDF7vwTLZb-A&callback=initMap" async defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="././assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="./js/bootstrap.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="./js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
      
    
-    
+
   </body>
 </html>
 
