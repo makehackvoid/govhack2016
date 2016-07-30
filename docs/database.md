@@ -26,7 +26,6 @@ So due to some articles containing quoted strings or just standalone quotes ther
 3. Impersonate 'postgres' user, to do this, type `sudo su postgres`
 4. Create the database `createdb govhack2016`
 5. Init the database structure `cat db.sql > psql govhack2016`
-6. Run the following commands to clean up the data, you will need to do this **every** time, at time of writing there is about 36 articles in the dataset that are malformed. Replace 12345 with the offending line number when postgres complains
-```bash
-sed '12345d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat import_data.sql | psql govhack2016
-```  
+6. Run the following commands to clean up the data, you will need to do this **every** time, at time of writing there is about 36 articles in the dataset that are malformed. Replace 12345 with the offending line number when postgres complains.
+  `sed '12345d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat import_data.sql | psql govhack2016`
+7. Once it finally imports *something*
