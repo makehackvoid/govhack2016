@@ -1,0 +1,37 @@
+echo "COPY article_meta_raw FROM '/tmp/ABCnewsmetadata.sedded.csv' DELIMITER ',' CSV HEADER;" > meh.sql
+sed '31121d' /tmp/ABCnewsmetadata.csv > /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '46943d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '76305d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '98705d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '110072d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '118533d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '125985d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '126305d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '138460d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '139653d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '146239d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '151936d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '158495d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '175103d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '184673d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '184988d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '186275d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '201247d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '211770d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '226344d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '228980d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '232064d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '232301d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '233345d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '233346d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '243236d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '246310d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '272814d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '302010d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '307600d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '307600d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '309553d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '310158d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '312382d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '317268d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
+sed '348763d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat meh.sql | psql govhack2016
