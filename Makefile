@@ -1,6 +1,6 @@
 all: java-api-service
 
-api/java/target/govhack2016-java-api.jar: api/java/src/* $(shell find api/java/src -type f)
+api/java/target/govhack2016-java-api.jar: api/java/* $(shell find api/java/src -type f)
 	mkdir -p /tmp/m2/repository
 	mkdir -p /tmp/java-api
 	cd api/java && docker build -t java-api-builder .
@@ -10,8 +10,8 @@ api/java/target/govhack2016-java-api.jar: api/java/src/* $(shell find api/java/s
 service/java-api/govhack2016-java-api.jar: api/java/target/govhack2016-java-api.jar
 	cp api/java/target/govhack2016-java-api.jar service/java-api/govhack2016-java-api.jar
 
-service/java-api/mhvapp.properties:
-	cp api/java/target/mhvapp.properties service/java-api/mhvapp.properties
+service/java-api/mhvapp.properties: api/java/mhvapp.properties
+	cp api/java/mhvapp.properties service/java-api/mhvapp.properties
 
 java-api-service: service/java-api/govhack2016-java-api.jar service/java-api/mhvapp.properties service/java-api/Dockerfile
 	cd service/java-api && docker build -t java-api .
