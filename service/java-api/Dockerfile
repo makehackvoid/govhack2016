@@ -1,7 +1,7 @@
 FROM maven:3-jdk-7
 
 #USER www-data
-
+RUN echo "Australia/Canberra" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 

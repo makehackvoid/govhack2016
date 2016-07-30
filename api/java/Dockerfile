@@ -1,6 +1,7 @@
 FROM maven:3-jdk-7
 
 #USER www-data
+RUN echo "Australia/Canberra" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
 VOLUME /tmp/m2/repository
 VOLUME /tmp/java-api
 
