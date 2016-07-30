@@ -89,7 +89,10 @@ seekbar.value = (day*24*60*60)+(hour*60*60)+(min*60)+sec
 
 }
 
-
+function dtstring_to_ts(strDateTime)
+{
+	return new Date(strDateTime).getTime();
+}
 
 
 // Change current viewing time when scrubbing through the progress bar
