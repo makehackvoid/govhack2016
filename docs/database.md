@@ -33,4 +33,8 @@ So due to some articles containing quoted strings or just standalone quotes ther
 9. Run the script, if your using a fast server this should take less than 5 minutes, but could take alot longer if your on a slower box/disk
 10. There you go, all done
 
-Max, don't forget to add a link to the parent document + the next step in setting up the database
+Max, don't forget to add a link to the parent document + the next step in setting up the database.
+
+[Back to the start](../docs/index.md)
+
+[To the next step](../docs/something.md)
