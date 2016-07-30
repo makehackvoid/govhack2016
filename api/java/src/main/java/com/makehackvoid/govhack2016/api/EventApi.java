@@ -72,11 +72,11 @@ public class EventApi
         long from = target - oneHour;
         long to = target + oneHour;
 
-        List<ParkingEvent> parkingEvents = ParkingEvents.getEvents(from, to);
+        //List<ParkingEvent> parkingEvents = ParkingEvents.getEvents(from, to);
         List<RoadDeath> roadDeaths = RoadDeaths.getEvents(from, to);
 
         List<TimeBasedEvent> combined = new ArrayList<TimeBasedEvent>();
-        combined.addAll(parkingEvents);
+        //combined.addAll(parkingEvents);
         combined.addAll(roadDeaths);
 
         long closestDiff = Long.MAX_VALUE;
