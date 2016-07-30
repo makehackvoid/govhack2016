@@ -91,7 +91,7 @@ public final class ParkingLotApi
             writer.write(lot.getTariffCode());
             writer.write("\",\n \"ward\":\"");
             writer.write(lot.getWard());
-            writer.write("\",\n \"zone:");
+            writer.write("\",\n \"zone\":");
             writer.write(String.valueOf(lot.getZone()));
             writer.write(",\n \"location\":\"");
             writer.write(lot.getLocation().replace('\n', ' '));
