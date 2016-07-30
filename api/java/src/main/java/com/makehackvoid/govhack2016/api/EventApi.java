@@ -150,6 +150,7 @@ public class EventApi
 
         List<TimeBasedEvent> combined = new ArrayList<TimeBasedEvent>();
         combined.addAll(parkingEvents);
+        combined.addAll(roadDeaths);
         combined.addAll(newsArticles);
 
         Collections.sort(combined, TimeBasedEvent.COMPARATOR);
