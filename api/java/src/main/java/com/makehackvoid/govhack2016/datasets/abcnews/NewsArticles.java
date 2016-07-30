@@ -67,7 +67,14 @@ public class NewsArticles
 
             while (rs.next())
             {
-                results.add(new NewsArticle(rs.getLong(1), rs.getString(2), rs.getString(3), rs.getDouble(4), rs.getDouble(5)));
+                try
+                {
+                    results.add(new NewsArticle(rs.getLong(1), rs.getString(2), rs.getString(3), rs.getDouble(4), rs.getDouble(5)));
+                }
+                catch (SQLException e)
+                {
+                    log.log(Level.WARNING, "Bad data", e);
+                }
             }
 
             Collections.sort(results, TimeBasedEvent.COMPARATOR);
