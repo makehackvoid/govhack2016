@@ -1,9 +1,15 @@
-.jsblock {
-    position: fixed;
-    left: 0;
+#jsblock {
+    position: inherit;
+    right: 0;
     top 80px;
     width: 260px;
     background-color: silver;
     overflow: hidden ;
     height: 100%;
 } 
+
+#map {
+    position: inherit;
+    width:60vw;
+    height:60vw;
+ }
