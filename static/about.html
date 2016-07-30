@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="./favicon.ico">
+
+    <title>Farrago Parking</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="./css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="./css/custom.css" rel="stylesheet">
+    <script src="./js/d3.v3.min.js"></script>
+    <!-- Custom styles for this template -->
+    <!--link href="../css/jumbotron.css" rel="stylesheet"--!>
+
+<!--     <!-- Just for debugging purposes. Dojsbn't actually copy these 2 lines! --> -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="./js/ie-emulation-modes-warning.js"></script>
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Farrago Parking</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+           <ul class="nav navbar-nav">
+            <li><a href="./index.html">Home</a></li>
+            <li class="active"><a href="./about.html">About</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+        <!--if we want stuff in the RIGHT navbar-->
+          </ul>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>MakeHackVoid Welcomes you to Farrago Parking</h1>
+        <p>Let's bring a bit of Farrago chaos to the order of parking.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      </div>
+    </div>
+
+    <div class="container">
+	<!-- Example row of columns -->
+	<div class="col-md-8">
+		<h2>About Farrago Parking</h2>
+		<p>Our project makes use of the ACT governments parking data to releate seamingly unrelated events. It will bring a bit of Farrago chaos to the order of parking.</p>
+		<p>In the future we would like to see it expanded to include theme based events (i.e. when you find an empty parking spot you recieve a good news story. when you overstay in your spot you revieve a bad nes story.</p>
+		<p>While our projects focuses on a limited time frain because the data avaliable is limited at this time we envission in the future that it could have wider application in several areas including event hotspots. i.e. say a application user is looking for a park this application extension could inform them why there is no car parks avaliable and provide them with a alternative means off getting to their desired location.</p>
+		<p>Additionally to our initial idea it could also have a comercial application with stores closer to parking spaces being able to by application advertising time for thos spaces in return if a shoper makes a pursach in their store who has used the application they can get their parking validated for free or similar.</p>
+		
+		<h2>About MakeHackVoid</h2>
+		<p>MakeHackVoid is modeled on an <a href="https://hackerspaces.org">international community of like minded spaces</a> that started in Germany in 1995. It supports and encourages arts, science and technology culture in the ACT by providing a <a href="https://makehackvoid.com/our-space/">physical space</a> for Canberra residents, as well as national and international visitors to meet, interact and create.</p>
+		<p>We hold public meetups every Tuesday from 6:30pm. These <a href="https://makehackvoid.com/meetings/">meetups</a> are where we invite you to join us and chat, participate in show and tell, get help or advice, or talk about your projects. We are open at other times throughout the week for drop ins, workshops, general hacking and socialising; check the calendar for planned sessions and watch our twitter feed and announce mailing list for notifications of the space opening.</p>
+		<p>Our group includes people with diverse backgrounds and interests. MakeHackVoid is dedicated to a harassment-free experience for everyone.</p>
+		
+		<h2>Datasets Used</h2>
+		<p>The following datasets where consumed in the making of this production</p>
+		<ul>
+			<li>
+				<a href="https://data.gov.au/dataset/abc-news-may-2016">Views of ABC News Digital Content (May 2016)</a>
+			</li>
+			<li>
+				<a href="https://www.data.act.gov.au/Transport/SmartParking-Lots/h5gb-tess">ACT Government - ACTPG - SmartParking Lots</a>
+			</li>
+			<li>
+				<a href="https://www.data.act.gov.au/Transport/SmartParking-History/grth-myzs">ACT Government - ACTPG - SmartParking History</a>
+			</li>
+			<li>
+				<a href="https://data.gov.au/dataset/australian-road-deaths-database">Bureau of Infrastructure, Transport and Regional Economics - Australian Road Deaths Database (June 2016)</a>
+			</li>
+		</ul>
+	</div>
+
+	<hr />
+	<footer>
+		<p>Proudly made by <a href="https://makehackvoid.com/">MakeHackVoid</a>, Canberra's Oldest Hackerspace</p>
+	</footer>
+	
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+   
+        
+        
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvXZRVV6T2jKe31BgcdL_pDF7vwTLZb-A&callback=initMap" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+     
+   
+
+  </body>
+</html>
+
