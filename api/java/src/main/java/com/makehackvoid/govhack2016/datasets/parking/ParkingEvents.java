@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 import com.makehackvoid.govhack2016.datasets.parking.ParkingEvent.Type;
@@ -51,7 +52,11 @@ public class ParkingEvents
         try
         {
             ZipInputStream zis = new ZipInputStream(ParkingEvents.class.getResourceAsStream(path));
-            zis.getNextEntry();
+
+            for (ZipEntry entry = zis.getNextEntry(); entry.getName() == null || !entry.getName().toLowerCase().endsWith("csv") ; entry = zis.getNextEntry())
+            {
+            }
+
             reader = new CSVReader(new InputStreamReader(zis));
 
             // Skip header
