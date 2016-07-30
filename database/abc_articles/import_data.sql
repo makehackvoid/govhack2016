@@ -1,0 +1,1 @@
+COPY article_meta_raw FROM '/tmp/ABCnewsmetadata.sedded.csv' DELIMITER ',' CSV HEADER;
