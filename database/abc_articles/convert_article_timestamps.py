@@ -18,7 +18,7 @@ sql = "SELECT contentid,contenttype,contenttitletag,contentheadline,contentkeywo
 sql += "contentnewsfromothersites,contentcomments,contentlength,contentparagraphs,contentwords,"
 sql += "contentduration,contentvideos,contentaudio,contentphotos,contentgalleries,contentmaps,"
 sql += "contentrelatedstories,contentfirstpublished,contentdescription,contenttopics "
-sql += "FROM article_meta_raw LIMIT 100"
+sql += "FROM article_meta_raw"
 
 
 cur.execute(sql)
@@ -32,10 +32,25 @@ while row:
     print ("Processing",row[0]," - ",row[19])
 
     dt_raw = row[19]
+    
+    if dt_raw == '':
+        dt_raw = "1980-01-01 00:00:00"
+
     out_dt = int(datetime.datetime.strptime(dt_raw,"%Y-%m-%d %H:%M:%S").strftime("%s")) * 1000
 
+    lat = row[5]
+    lon = row[6]
+
+    if lat == '':
+    	lat = 0;
+
+    if lon == '':
+    	lon = 0;
+
+
+
     rowa = (
-    		row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7],row[8],row[9],
+    		row[0],row[1],row[2],row[3],row[4],lat,lon,row[7],row[8],row[9],
     		row[10],row[11],row[12],row[13],row[14],row[15],row[16],row[17],row[18],out_dt,
     		row[20],row[21]
     		)
