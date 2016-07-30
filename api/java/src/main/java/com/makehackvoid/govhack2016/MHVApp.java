@@ -83,6 +83,9 @@ public class MHVApp
         log.log(Level.INFO, "Server started");
     }
 
+    /**
+     * Initialises the data sets.
+     */
     private static void initialiseDataSets()
     {
         // Initialise the data sets.

@@ -112,6 +112,14 @@ public class RoadDeaths
                + "), last = " + dateFormat.format(max) + " (" + max + ')');
     }
 
+    /**
+     * Retrieves the events within the given time range.
+     * Times are measured in millis past midnight, January 1, 1970 UTC.
+     *
+     * @param from the start of the time range.
+     * @param to the end of the time range.
+     * @return the events which occurred within the given time range.
+     */
     public static List<RoadDeath> getEvents(final long from, final long to)
     {
         List<RoadDeath> results = new ArrayList<RoadDeath>();

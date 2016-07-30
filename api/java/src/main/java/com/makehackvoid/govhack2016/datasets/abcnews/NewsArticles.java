@@ -21,7 +21,7 @@ import com.makehackvoid.govhack2016.util.TimeBasedEvent;
  *
  * @author Yiannis Paschalidis
  */
-public class NewsArticles
+public final class NewsArticles
 {
     /** The logger instance for this class. */
     private static final Logger log = Logger.getLogger(NewsArticles.class.getName());
@@ -38,6 +38,16 @@ public class NewsArticles
         }
     }
 
+    /** Prevent instantiation of this utility class. */
+    private NewsArticles()
+    {
+    }
+
+    /**
+     * Retrieves a connection to the d/b.
+     * @return a connection to the d/b.
+     * @throws SQLException on error.
+     */
     private static Connection getConnection() throws SQLException
     {
         String url = MHVApp.getConfigParam("newsarticles.jdbc.url", null);
@@ -50,16 +60,25 @@ public class NewsArticles
         return DriverManager.getConnection(url, props);
     }
 
+    /**
+     * Retrieves the articles first published within the given time range.
+     * Times are measured in millis past midnight, January 1, 1970 UTC.
+     *
+     * @param from the start of the time range.
+     * @param to the end of the time range.
+     * @return the events which occurred within the given time range.
+     */
     public static List<NewsArticle> getEvents(final long from, final long to)
     {
         List<NewsArticle> results = new ArrayList<NewsArticle>();
+        Connection conn = null;
+
+        String sql = "select contentfirstpublished, contentid, contentheadline, contentlatitude, contentlongitude"
+                + " from article_meta where contentfirstpublished > (?-3600000) and contentfirstpublished < (?+3600000)";
 
         try
         {
-            String sql = "select contentfirstpublished, contentid, contentheadline, contentlatitude, contentlongitude"
-                    + " from article_meta where contentfirstpublished > (?-3600000) and contentfirstpublished < (?+3600000)";
-
-            Connection conn = getConnection();
+            conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setLong(1, from);
             stmt.setLong(2, to);
@@ -97,6 +116,20 @@ public class NewsArticles
         catch (SQLException e)
         {
             log.log(Level.WARNING, "Failed to read news articles", e);
+        }
+        finally
+        {
+            try
+            {
+                if (conn != null)
+                {
+                    conn.close();
+                }
+            }
+            catch (Exception e)
+            {
+                log.log(Level.FINE, "Failed to close connection.", e);
+            }
         }
 
         return results;
