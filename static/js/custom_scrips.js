@@ -26,7 +26,7 @@ var hour = 0;
 var day = 1;
 var tick = 300;
 var timestr = null;
-
+//var seekbar = document.getElementById("seek-bar");
 var blnplay = false;
 
 //setcount_function = function(){
@@ -49,7 +49,7 @@ function setcount_function(){
 }
 
 tick_function = function(){
-  var seekbar = document.getElementById("seek-bar");
+  
 
 if (tick < 60) {
     //running secongs
