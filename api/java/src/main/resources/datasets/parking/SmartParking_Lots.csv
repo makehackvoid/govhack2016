@@ -1,0 +1,91 @@
+BayCount,BayType,City,Latitude,Longitude,LotCode,MaxStayPeriod,OperatingHourCode,Street,SubZone,TariffCode,Ward,Zone,Location
+4,Disabled,Manuka,-35.319145,149.13231,102,0,All_Day,Franklin Street,1,Free,Franklin,1,"Franklin Street
+(-35.319145, 149.13231)"
+2,Disabled,Manuka,-35.32018,149.131531,201,0,All_Day,Bougainville Street,1,Free,Bougainville,1,"Bougainville Street
+(-35.32018, 149.131531)"
+2,Disabled,Manuka,-35.320823,149.132285,204,0,All_Day,Bougainville Street,1,Free,Bougainville,1,"Bougainville Street
+(-35.320823, 149.132285)"
+4,Disabled,Manuka,-35.321173,149.133168,207,0,All_Day,Bougainville Street,1,Free,Bougainville,1,"Bougainville Street
+(-35.321173, 149.133168)"
+2,Disabled,Manuka,-35.319649,149.131909,301,0,All_Day,Furneaux Street,1,Free,Furneaux,1,"Furneaux Street
+(-35.319649, 149.131909)"
+19,1P Free,Manuka,-35.318906,149.132104,101,60,All_Day,Franklin Street,1,Free_1_hr,Franklin,1,"Franklin Street
+(-35.318906, 149.132104)"
+6,1P Free,Manuka,-35.319238,149.132392,103,60,All_Day,Franklin Street,1,Free_1_hr,Franklin,1,"Franklin Street
+(-35.319238, 149.132392)"
+6,1P Free,Manuka,-35.318904,149.131901,111,60,All_Day,Franklin Street,1,Free_1_hr,Franklin,1,"Franklin Street
+(-35.318904, 149.131901)"
+4,1P Free,Manuka,-35.319236,149.13221,112,60,All_Day,Franklin Street,1,Free_1_hr,Franklin,1,"Franklin Street
+(-35.319236, 149.13221)"
+3,15m Free,Manuka,-35.320348,149.134625,105,15,All_Day,Franklin Street,1,Free_15_mins,Franklin,1,"Franklin Street
+(-35.320348, 149.134625)"
+1,Dropoff,Manuka,-35.31999,149.133689,401,5,All_Day,Flinders Way,1,Free_5_mins,Flinders,1,"Flinders Way
+(-35.31999, 149.133689)"
+1,5Min Free,Manuka,-35.320933,149.133637,416,5,All_Day,Flinders Way,1,Free_5_mins,Flinders,1,"Flinders Way
+(-35.320933, 149.133637)"
+3,5Min Free,Manuka,-35.320573,149.13372,417,5,All_Day,Flinders Way,1,Free_5_mins,Flinders,1,"Flinders Way
+(-35.320573, 149.13372)"
+4,LZ,Manuka,-35.320019,149.132024,701,30,All_Day,Palmerston Lane,1,LZ_&_1P,Palmerston,1,"Palmerston Lane
+(-35.320019, 149.132024)"
+4,1P Free,Manuka,-35.32175,149.133464,413,60,Free,Flinders Way,1,Free_1_hr,Flinders,1,"Flinders Way
+(-35.32175, 149.133464)"
+4,1P Free,Manuka,-35.321654,149.13349,414,60,Free,Flinders Way,1,Free_1_hr,Flinders,1,"Flinders Way
+(-35.321654, 149.13349)"
+4,1P Free,Manuka,-35.321535,149.133511,415,60,Free,Flinders Way,1,Free_1_hr,Flinders,1,"Flinders Way
+(-35.321535, 149.133511)"
+7,2P Free,Manuka,-35.320252,149.130602,311,120,Free,Furneaux Street,1,Free_2_hrs,Furneaux,1,"Furneaux Street
+(-35.320252, 149.130602)"
+11,2P Free,Manuka,-35.321474,149.135028,511,120,Free,Captain Cook Cres,1,Free_2_hrs,Captain Cook Cres,1,"Captain Cook Cres
+(-35.321474, 149.135028)"
+8,2P Free,Manuka,-35.320302,149.135269,512,120,Free,Captain Cook Cres,1,Free_2_hrs,Captain Cook Cres,1,"Captain Cook Cres
+(-35.320302, 149.135269)"
+4,30m Free,Manuka,-35.321976,149.133417,411,30,Free,Flinders Way,1,Free_30_mins,Flinders,1,"Flinders Way
+(-35.321976, 149.133417)"
+4,30m Free,Manuka,-35.321869,149.133445,412,30,Free,Flinders Way,1,Free_30_mins,Flinders,1,"Flinders Way
+(-35.321869, 149.133445)"
+82,8P,Manuka,-35.319298,149.130982,603,0,Voucher,Furneaux St Multi Storey - Roof,2,MS04,Off Street,2,"Furneaux St Multi Storey - Roof
+(-35.319298, 149.130982)"
+71,4P,Manuka,-35.31942,149.131437,601,240,Voucher,Furneaux St Multi Storey - Ground,2,SS03,Off Street,2,"Furneaux St Multi Storey - Ground
+(-35.31942, 149.131437)"
+38,4P,Manuka,-35.31918,149.131562,602,240,Voucher,Furneaux St Multi Storey - Level 1,2,SS03,Off Street,2,"Furneaux St Multi Storey - Level 1
+(-35.31918, 149.131562)"
+2,1P Voucher,Manuka,-35.320255,149.134267,104,60,Voucher,Franklin Street,1,SS06_1P,Franklin,1,"Franklin Street
+(-35.320255, 149.134267)"
+7,1P Voucher,Manuka,-35.319806,149.132673,113,60,Voucher,Franklin Street,1,SS06_1P,Franklin,1,"Franklin Street
+(-35.319806, 149.132673)"
+12,1P Voucher,Manuka,-35.321103,149.134606,501,60,Voucher,Captain Cook Cres,1,SS06_1P,Captain Cook Cres,1,"Captain Cook Cres
+(-35.321103, 149.134606)"
+11,1P Voucher,Manuka,-35.320821,149.134663,502,60,Voucher,Captain Cook Cres,1,SS06_1P,Captain Cook Cres,1,"Captain Cook Cres
+(-35.320821, 149.134663)"
+8,2P Voucher,Manuka,-35.320288,149.131621,202,120,Voucher,Bougainville Street,1,SS06_2P,Bougainville,1,"Bougainville Street
+(-35.320288, 149.131621)"
+17,2P Voucher,Manuka,-35.320641,149.131988,203,120,Voucher,Bougainville Street,1,SS06_2P,Bougainville,1,"Bougainville Street
+(-35.320641, 149.131988)"
+15,2P Voucher,Manuka,-35.320956,149.132501,205,120,Voucher,Bougainville Street,1,SS06_2P,Bougainville,1,"Bougainville Street
+(-35.320956, 149.132501)"
+9,2P Voucher,Manuka,-35.321127,149.132992,206,120,Voucher,Bougainville Street,1,SS06_2P,Bougainville,1,"Bougainville Street
+(-35.321127, 149.132992)"
+4,2P Voucher,Manuka,-35.32024,149.131408,211,120,Voucher,Bougainville Street,1,SS06_2P,Bougainville,1,"Bougainville Street
+(-35.32024, 149.131408)"
+7,2P Voucher,Manuka,-35.320433,149.131579,212,120,Voucher,Bougainville Street,1,SS06_2P,Bougainville,1,"Bougainville Street
+(-35.320433, 149.131579)"
+8,2P Voucher,Manuka,-35.32062,149.131796,213,120,Voucher,Bougainville Street,1,SS06_2P,Bougainville,1,"Bougainville Street
+(-35.32062, 149.131796)"
+6,2P Voucher,Manuka,-35.320792,149.13202,214,120,Voucher,Bougainville Street,1,SS06_2P,Bougainville,1,"Bougainville Street
+(-35.320792, 149.13202)"
+7,2P Voucher,Manuka,-35.320972,149.132312,215,120,Voucher,Bougainville Street,1,SS06_2P,Bougainville,1,"Bougainville Street
+(-35.320972, 149.132312)"
+8,2P Voucher,Manuka,-35.321086,149.132579,216,120,Voucher,Bougainville Street,1,SS06_2P,Bougainville,1,"Bougainville Street
+(-35.321086, 149.132579)"
+8,2P Voucher,Manuka,-35.321189,149.132869,217,120,Voucher,Bougainville Street,1,SS06_2P,Bougainville,1,"Bougainville Street
+(-35.321189, 149.132869)"
+3,2P Voucher,Manuka,-35.321284,149.133197,218,120,Voucher,Bougainville Street,1,SS06_2P,Bougainville,1,"Bougainville Street
+(-35.321284, 149.133197)"
+11,30m Voucher,Manuka,-35.319557,149.132115,302,30,Voucher,Furneaux Street,1,SS06_30m,Furneaux,1,"Furneaux Street
+(-35.319557, 149.132115)"
+3,30m Voucher,Manuka,-35.319634,149.132171,312,30,Voucher,Furneaux Street,1,SS06_30m,Furneaux,1,"Furneaux Street
+(-35.319634, 149.132171)"
+8,30m Voucher,Manuka,-35.319879,149.13373,402,30,Voucher,Flinders Way,1,SS06_30m,Flinders,1,"Flinders Way
+(-35.319879, 149.13373)"
+4,30m Voucher,Manuka,-35.320141,149.134852,503,30,Voucher,Captain Cook Cres,1,SS06_30m,Captain Cook Cres,1,"Captain Cook Cres
+(-35.320141, 149.134852)"

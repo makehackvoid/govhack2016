@@ -11,6 +11,9 @@ import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.HandlerCollection;
 import org.eclipse.jetty.webapp.WebAppContext;
 
+import com.makehackvoid.govhack2016.datasets.parking.ParkingEvents;
+import com.makehackvoid.govhack2016.datasets.parking.ParkingLots;
+
 /**
  * MHV GovHack 2016 web app main entry point.
  *
@@ -31,6 +34,9 @@ public class MHVApp
      */
     public static void main( final String[] args) throws Exception
     {
+        // Initialise data sets. This takes a while...
+        initialiseDataSets();
+
         // Create & configure the server
         String hostStr = CONFIG.getProperty("host");
         String portStr = CONFIG.getProperty("port");
@@ -75,6 +81,28 @@ public class MHVApp
         log.log(Level.INFO, "Server started");
     }
 
+    private static void initialiseDataSets()
+    {
+        // Initialise the data sets.
+        new Thread()
+        {
+            @Override
+            public void run()
+            {
+                ParkingLots.getLot(0);
+            }
+        }.start();
+
+        new Thread()
+        {
+            @Override
+            public void run()
+            {
+                ParkingEvents.getEvents(0, 0);
+            }
+        }.start();
+    }
+
     /**
      * Retrieves the application properties.
      * @return the application properties.
@@ -102,17 +130,7 @@ public class MHVApp
         }
         finally
         {
-            if (is != null)
-            {
-                try
-                {
-                    is.close();
-                }
-                catch (Exception e)
-                {
-                    log.log(Level.FINEST, "Error closing config stream", e);
-                }
-            }
+             Util.safeClose(is);
         }
 
         return props;
