@@ -117,25 +117,18 @@ public class RoadDeaths
         List<RoadDeath> results = new ArrayList<RoadDeath>();
         final int n = EVENTS.size();
 
-System.out.println("### RoadDeaths.getEvents -> " + from + " - " + to);
-
         // TODO: Performance - binary search
         for (int i = 0; i < n; i++)
         {
             RoadDeath event = EVENTS.get(i);
             long eventTime = event.getTime();
 
-System.out.println("### RoadDeaths[" + i +"].time -> " + eventTime);
-
             if (eventTime >= from && eventTime <= to)
             {
-System.out.println("### Add");
                 results.add(event);
             }
             else if (eventTime > to)
             {
-                System.out.println("### Break");
-
                 // Sorted by timestamp, so we've reached the end.
                 break;
             }
