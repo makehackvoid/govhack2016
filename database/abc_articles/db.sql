@@ -59,7 +59,7 @@ CREATE TABLE article_meta (
 );
 
 
-ALTER TABLE article_meta OWNER TO max;
+ALTER TABLE article_meta OWNER TO postgres;
 
 --
 -- Name: article_meta_raw; Type: TABLE; Schema: public; Owner: postgres; Tablespace:

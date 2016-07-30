@@ -203,16 +203,16 @@ public class EventApi
      */
     private static void writeParkingEvent(final ParkingEvent parkingEvent, final Writer writer) throws IOException
     {
-        writer.write("{\n eventType:\"park\"");
-        writer.write("\n lotCode: ");
+        writer.write("{\n \"eventType\":\"park\"");
+        writer.write(",\n \"lotCode\":");
         writer.write(String.valueOf(parkingEvent.getLotCode()));
-        writer.write(",\n bayNumber:");
+        writer.write(",\n \"bayNumber\":");
         writer.write(String.valueOf(parkingEvent.getBayNumber()));
-        writer.write(",\n bayName:\"");
+        writer.write(",\n \"bayName\":\"");
         writer.write(parkingEvent.getBayName());
-        writer.write("\",\n type:");
+        writer.write("\",\n \"type\":\"");
         writer.write(parkingEvent.getType().name().toLowerCase());
-        writer.write(",\n time:");
+        writer.write("\",\n \"time\":");
         writer.write(String.valueOf(parkingEvent.getTime()));
         writer.write("\n}");
     }
@@ -225,20 +225,20 @@ public class EventApi
      */
     private static void writeRoadDeathJson(final RoadDeath roadDeath, final Writer writer) throws IOException
     {
-        writer.write("{\n eventType:\"roadDeath\"");
-        writer.write("\n state:\"");
+        writer.write("{\n \"eventType\":\"roadDeath\"");
+        writer.write(",\n \"state\":\"");
         writer.write(roadDeath.getState());
-        writer.write("\",\n time:");
+        writer.write("\",\n \"time\":");
         writer.write(String.valueOf(roadDeath.getTime()));
-        writer.write(",\n type:\"");
+        writer.write(",\n \"type\":\"");
         writer.write(roadDeath.getType());
-        writer.write("\",\n speedLimit:");
+        writer.write("\",\n \"speedLimit\":");
         writer.write(String.valueOf(roadDeath.getSpeedLimit()));
-        writer.write(",\n user:\"");
+        writer.write(",\n \"user\":\"");
         writer.write(roadDeath.getUser());
-        writer.write("\",\n gender:\"");
+        writer.write("\",\n \"gender\":\"");
         writer.write(roadDeath.getGender());
-        writer.write("\",\n age:");
+        writer.write("\",\n \"age\":");
         writer.write(String.valueOf(roadDeath.getAge()));
         writer.write("\n}");
     }
@@ -251,16 +251,16 @@ public class EventApi
      */
     private static void writeNewsArticleJson(final NewsArticle article, final Writer writer) throws IOException
     {
-        writer.write("{\n eventType:\"news\"");
-        writer.write("\n firstPublished: ");
+        writer.write("{\n \"eventType\":\"news\"");
+        writer.write(",\n \"firstPublished\": ");
         writer.write(String.valueOf(article.getFirstPublished()));
-        writer.write(",\n contentId:\"");
+        writer.write(",\n \"contentId\":\"");
         writer.write(article.getContentId());
-        writer.write("\",\n headLine:\"");
+        writer.write("\",\n \"headLine\":\"");
         writer.write(article.getHeadLine().replace('"', '\''));
-        writer.write("\",\n latitude:\"");
+        writer.write("\",\n \"latitude\":\"");
         writer.write(String.valueOf(article.getLatitude()));
-        writer.write("\",\n longitude:\"");
+        writer.write("\",\n \"longitude\":\"");
         writer.write(String.valueOf(article.getLongitude()));
         writer.write("\"\n}");
     }
