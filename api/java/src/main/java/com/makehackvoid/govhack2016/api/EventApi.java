@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.eclipse.jetty.http.HttpStatus;
 
+import com.makehackvoid.govhack2016.MHVServlet;
 import com.makehackvoid.govhack2016.datasets.abcnews.NewsArticle;
 import com.makehackvoid.govhack2016.datasets.abcnews.NewsArticles;
 import com.makehackvoid.govhack2016.datasets.parking.ParkingEvent;
@@ -66,7 +67,7 @@ public class EventApi
 
         if (target < 0)
         {
-            resp.sendError(HttpStatus.BAD_REQUEST_400);
+            MHVServlet.sendError(HttpStatus.BAD_REQUEST_400, resp);
             return;
         }
 
@@ -139,7 +140,7 @@ public class EventApi
 
         if (from < 0 || to < 0 || to < from)
         {
-            resp.sendError(HttpStatus.BAD_REQUEST_400);
+            MHVServlet.sendError(HttpStatus.BAD_REQUEST_400, resp);
             return;
         }
 
