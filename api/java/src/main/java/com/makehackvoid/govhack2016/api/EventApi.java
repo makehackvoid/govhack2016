@@ -133,6 +133,9 @@ public class EventApi
         {
         }
 
+System.out.println("### from = " + from);
+System.out.println("### to = " + from);
+
         if (from < 0 || to < 0 || to < from)
         {
             resp.sendError(HttpStatus.BAD_REQUEST_400);
@@ -146,7 +149,12 @@ public class EventApi
         combined.addAll(parkingEvents);
         combined.addAll(roadDeaths);
 
+System.out.println("### parkingEvent = " + parkingEvents);
+System.out.println("### roadDeaths = " + roadDeaths);
+
         Collections.sort(combined, TimeBasedEvent.COMPARATOR);
+
+System.out.println("### combined = " + combined);
 
         final int n = combined.size();
 

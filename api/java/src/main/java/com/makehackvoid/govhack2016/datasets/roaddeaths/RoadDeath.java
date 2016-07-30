@@ -83,4 +83,12 @@ public class RoadDeath implements TimeBasedEvent
     {
         return age;
     }
+
+    /** {@inheritDoc} */
+    @Override
+    public String toString()
+    {
+        return "RoadDeath [State=" + State + ", time=" + time + ", type=" + type + ", speedLimit=" + speedLimit
+                + ", user=" + user + ", gender=" + gender + ", age=" + age + "]";
+    }
 }

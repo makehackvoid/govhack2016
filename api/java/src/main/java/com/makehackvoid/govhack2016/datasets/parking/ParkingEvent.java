@@ -60,4 +60,12 @@ public class ParkingEvent implements TimeBasedEvent
     {
         return time;
     }
+
+    /** {@inheritDoc} */
+    @Override
+    public String toString()
+    {
+        return "ParkingEvent [lotCode=" + lotCode + ", bayNumber=" + bayNumber + ", bayName=" + bayName + ", type="
+                + type + ", time=" + time + "]";
+    }
 }
