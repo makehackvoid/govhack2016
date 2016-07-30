@@ -1,41 +1,41 @@
-package com.makehackvoid.govhack2016.datasets.parking;
+package com.makehackvoid.govhack2016.datasets.roaddeaths;
 
 import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.zip.ZipInputStream;
 
-import com.makehackvoid.govhack2016.datasets.parking.ParkingEvent.Type;
 import com.makehackvoid.govhack2016.util.TimeBasedEvent;
 import com.makehackvoid.govhack2016.util.Util;
 
 import au.com.bytecode.opencsv.CSVReader;
 
 /**
- * ACT SmartParking history.
+ * Collection of Australian Road Deaths Database entries.
  *
  * @author Yiannis Paschalidis
  */
-public class ParkingEvents
+public class RoadDeaths
 {
     /** The logger instance for this class. */
-    private static final Logger log = Logger.getLogger(ParkingEvents.class.getName());
+    private static final Logger log = Logger.getLogger(RoadDeaths.class.getName());
 
     /** Parking events, ordered by timestamp. */
-    private static final List<ParkingEvent> EVENTS = new ArrayList<ParkingEvent>();
+    private static final List<RoadDeath> EVENTS = new ArrayList<RoadDeath>();
 
     static
     {
         log.log(Level.INFO, "Reading parking events");
-        readData("/datasets/parking/SmartParking_History.zip");
+        readData("/datasets/road_deaths/FatalitiesMAY2016-csv.csv");
     }
 
     /** Prevent instantiation of this utility class. */
-    private ParkingEvents()
+    private RoadDeaths()
     {
     }
 
@@ -45,18 +45,18 @@ public class ParkingEvents
      */
     private static void readData(final String path)
     {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss aa Z");
+        List<String> months = Arrays.asList("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
         CSVReader reader = null;
 
         try
         {
-            ZipInputStream zis = new ZipInputStream(ParkingEvents.class.getResourceAsStream(path));
-            zis.getNextEntry();
-            reader = new CSVReader(new InputStreamReader(zis));
+            reader = new CSVReader(new InputStreamReader(RoadDeaths.class.getResourceAsStream(path)));
 
             // Skip header
             reader.readNext();
             int lineNum = 1;
+
+            Calendar cal = Calendar.getInstance();
 
             for (String[] line = reader.readNext() ; line != null ; line = reader.readNext())
             {
@@ -64,31 +64,26 @@ public class ParkingEvents
 
                 try
                 {
-                    int lotCode = Integer.parseInt(line[2]);
-                    int bayNumber = Integer.parseInt(line[3]);
-                    String bayName = line[4];
-                    Type type = null;
 
-                    if ("Arrival".equals(line[5]))
-                    {
-                        type = Type.ARRIVAL;
-                    }
-                    else if ("Vacated".equals(line[5]))
-                    {
-                        type = Type.DEPARTURE;
-                    }
-                    else if ("Overstay".equals(line[5]))
-                    {
-                        type = Type.OVERSTAY;
-                    }
-                    else
-                    {
-                        // Flat battery? Overstay cancel?
-                        continue;
-                    }
+                    String state = line[0];
+                    int day = Integer.parseInt(line[1]);
+                    String monthName = line[2];
+                    int year = Integer.parseInt(line[3]);
+                    int hour = Integer.parseInt(line[4]);
+                    int minute = Integer.parseInt(line[5]);
+                    String type = line[6];
+                    int speedLimit = "Unlimited".equals(line[7]) ? 0 : Integer.parseInt(line[7]);
+                    String user = line[8];
+                    String gender = line[9];
+                    int age = Integer.parseInt(line[10]);
 
-                    long time = dateFormat.parse(line[6] + " +1000").getTime();
-                    EVENTS.add(new ParkingEvent(lotCode, bayNumber, bayName, type, time));
+                    cal.set(Calendar.DAY_OF_MONTH, day);
+                    cal.set(Calendar.MONTH, months.indexOf(monthName));
+                    cal.set(Calendar.YEAR, year);
+                    cal.set(Calendar.HOUR_OF_DAY, hour);
+                    cal.set(Calendar.MINUTE, minute);
+
+                    EVENTS.add(new RoadDeath(state, cal.getTimeInMillis(), type, speedLimit, user, gender, age));
                 }
                 catch (Exception e)
                 {
@@ -110,20 +105,22 @@ public class ParkingEvents
         long min = EVENTS.get(0).getTime();
         long max = EVENTS.get(EVENTS.size() - 1).getTime();
 
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+
         log.log(Level.INFO, "Read " + EVENTS.size() + " events, "
                + " first = " + dateFormat.format(min) + " (" + min
                + "), last = " + dateFormat.format(max) + " (" + max + ')');
     }
 
-    public static List<ParkingEvent> getEvents(final long from, final long to)
+    public static List<RoadDeath> getEvents(final long from, final long to)
     {
-        List<ParkingEvent> results = new ArrayList<ParkingEvent>();
+        List<RoadDeath> results = new ArrayList<RoadDeath>();
         final int n = EVENTS.size();
 
         // TODO: Performance - binary search
         for (int i=0 ; i < n ; i++)
         {
-            ParkingEvent event = EVENTS.get(i);
+            RoadDeath event = EVENTS.get(i);
             long eventTime = event.getTime();
 
             if (eventTime >= from && eventTime <= to)

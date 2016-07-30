@@ -1,6 +1,8 @@
 package com.makehackvoid.govhack2016;
 
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -18,6 +20,9 @@ import com.makehackvoid.govhack2016.api.ParkingLotApi;
  */
 public class MHVServlet extends HttpServlet
 {
+    /** The logger instance for this class. */
+    private static final Logger log = Logger.getLogger(MHVServlet.class.getName());
+
     /** {@inhheritDoc} */
     @Override
     protected void doGet(final HttpServletRequest req, final HttpServletResponse resp) throws ServletException, IOException
@@ -26,11 +31,18 @@ public class MHVServlet extends HttpServlet
 
         if ("/events".equals(path))
         {
+            log.log(Level.INFO, req.getRemoteAddr() + " requested events");
             EventApi.handle(req, resp);
         }
         else if ("/lots".equals(path))
         {
+            log.log(Level.INFO, req.getRemoteAddr() + " requested parking lots");
             ParkingLotApi.handle(req, resp);
+        }
+        else
+        {
+            resp.sendError(HttpStatus.BAD_REQUEST_400);
+            log.log(Level.WARNING, "Unknown API request: " + path + " from " + req.getRemoteAddr());
         }
     }
 
