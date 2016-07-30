@@ -28,4 +28,4 @@ So due to some articles containing quoted strings or just standalone quotes ther
 5. Init the database structure `cat db.sql > psql govhack2016`
 6. Run the following commands to clean up the data, you will need to do this **every** time, at time of writing there is about 36 articles in the dataset that are malformed. Replace 12345 with the offending line number when postgres complains.
   `sed '12345d' /tmp/ABCnewsmetadata.sedded.csv > /tmp/ABCnewsmetadata.sedded.csv.tmp; mv /tmp/ABCnewsmetadata.sedded.csv.tmp /tmp/ABCnewsmetadata.sedded.csv; cat import_data.sql | psql govhack2016`
-7. Once it finally imports *something*
+7. Once the import is completed you will then need to parse the data. Fire up your favourite text editor and open up "convert_article_timestamps.py"
