@@ -146,4 +146,9 @@ public class MHVApp
 
         return props;
     }
+
+    public static String getConfigParam(final String key, final String defolt)
+    {
+        return CONFIG.getProperty(key, defolt);
+    }
 }

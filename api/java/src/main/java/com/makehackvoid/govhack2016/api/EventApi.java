@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.eclipse.jetty.http.HttpStatus;
 
+import com.makehackvoid.govhack2016.datasets.abcnews.NewsArticle;
+import com.makehackvoid.govhack2016.datasets.abcnews.NewsArticles;
 import com.makehackvoid.govhack2016.datasets.parking.ParkingEvent;
 import com.makehackvoid.govhack2016.datasets.parking.ParkingEvents;
 import com.makehackvoid.govhack2016.datasets.roaddeaths.RoadDeath;
@@ -74,10 +76,12 @@ public class EventApi
 
         //List<ParkingEvent> parkingEvents = ParkingEvents.getEvents(from, to);
         List<RoadDeath> roadDeaths = RoadDeaths.getEvents(from, to);
+        List<NewsArticle> newsArticles = NewsArticles.getEvents(from, to);
 
         List<TimeBasedEvent> combined = new ArrayList<TimeBasedEvent>();
         //combined.addAll(parkingEvents);
         combined.addAll(roadDeaths);
+        combined.addAll(newsArticles);
 
         long closestDiff = Long.MAX_VALUE;
         TimeBasedEvent closestEvent = null;
@@ -141,10 +145,11 @@ public class EventApi
 
         List<ParkingEvent> parkingEvents = ParkingEvents.getEvents(from, to);
         List<RoadDeath> roadDeaths = RoadDeaths.getEvents(from, to);
+        List<NewsArticle> newsArticles = NewsArticles.getEvents(from, to);
 
         List<TimeBasedEvent> combined = new ArrayList<TimeBasedEvent>();
         combined.addAll(parkingEvents);
-        combined.addAll(roadDeaths);
+        combined.addAll(newsArticles);
 
         Collections.sort(combined, TimeBasedEvent.COMPARATOR);
 
@@ -182,11 +187,15 @@ public class EventApi
         {
             writeRoadDeathJson((RoadDeath) event, writer);
         }
+        else if (event instanceof NewsArticle)
+        {
+            writeNewsArticleJson((NewsArticle) event, writer);
+        }
     }
 
     /**
      * Writes JSON for the given parking event.
-     * @param roadDeath the parking event data.
+     * @param parkingEvent the parking event data.
      * @param writer the writer to send the JSON to.
      * @throws IOException if there is an i/o error writing the data.
      */
@@ -230,5 +239,27 @@ public class EventApi
         writer.write("\",\n age:");
         writer.write(String.valueOf(roadDeath.getAge()));
         writer.write("\n}");
+    }
+
+    /**
+     * Writes JSON for the given news article summary.
+     * @param article the news article.
+     * @param writer the writer to send the JSON to.
+     * @throws IOException if there is an i/o error writing the data.
+     */
+    private static void writeNewsArticleJson(final NewsArticle article, final Writer writer) throws IOException
+    {
+        writer.write("{\n eventType:\"news\"");
+        writer.write("\n firstPublished: ");
+        writer.write(String.valueOf(article.getFirstPublished()));
+        writer.write(",\n contentId:\"");
+        writer.write(article.getContentId());
+        writer.write("\",\n headLine:\"");
+        writer.write(article.getHeadLine().replace('"', '\''));
+        writer.write("\",\n latitude:\"");
+        writer.write(String.valueOf(article.getLatitude()));
+        writer.write("\",\n longitude:\"");
+        writer.write(String.valueOf(article.getLongitude()));
+        writer.write("\"\n}");
     }
 }
