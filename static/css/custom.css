@@ -1,0 +1,9 @@
+.jsblock {
+    position: fixed;
+    left: 0;
+    top 80px;
+    width: 260px;
+    background-color: silver;
+    overflow: hidden ;
+    height: 100%;
+} 
