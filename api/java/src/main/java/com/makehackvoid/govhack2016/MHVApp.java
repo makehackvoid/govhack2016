@@ -13,6 +13,8 @@ import org.eclipse.jetty.webapp.WebAppContext;
 
 import com.makehackvoid.govhack2016.datasets.parking.ParkingEvents;
 import com.makehackvoid.govhack2016.datasets.parking.ParkingLots;
+import com.makehackvoid.govhack2016.datasets.roaddeaths.RoadDeaths;
+import com.makehackvoid.govhack2016.util.Util;
 
 /**
  * MHV GovHack 2016 web app main entry point.
@@ -89,7 +91,7 @@ public class MHVApp
             @Override
             public void run()
             {
-                ParkingLots.getLot(0);
+                ParkingLots.getLots();
             }
         }.start();
 
@@ -99,6 +101,15 @@ public class MHVApp
             public void run()
             {
                 ParkingEvents.getEvents(0, 0);
+            }
+        }.start();
+
+        new Thread()
+        {
+            @Override
+            public void run()
+            {
+                RoadDeaths.getEvents(0, 0);
             }
         }.start();
     }

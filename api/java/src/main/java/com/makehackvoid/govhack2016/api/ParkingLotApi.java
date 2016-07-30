@@ -21,6 +21,12 @@ import com.makehackvoid.govhack2016.datasets.parking.ParkingLots;
  */
 public class ParkingLotApi
 {
+    /**
+     * Handles a request to the Parking lot API.
+     * @param req the HTTP request.
+     * @param resp the HTTP response.
+     * @throws IOException if there is an i/o error.
+     */
     public static void handle(final HttpServletRequest req, final HttpServletResponse resp) throws IOException
     {
         int lotCode = -1;
@@ -47,10 +53,11 @@ public class ParkingLotApi
 
         final int n = lots.size();
 
+        resp.setContentType("application/json");
         Writer writer = new OutputStreamWriter(resp.getOutputStream(), "UTF-8");
         writer.write("[");
 
-        for (int i=0 ; i<n ; i++)
+        for (int i = 0; i < n; i++)
         {
             ParkingLot lot = lots.get(i);
             writer.write(i > 0 ? ",\n" : "\n");

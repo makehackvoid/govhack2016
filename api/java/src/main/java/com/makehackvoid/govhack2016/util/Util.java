@@ -1,4 +1,4 @@
-package com.makehackvoid.govhack2016;
+package com.makehackvoid.govhack2016.util;
 
 import java.io.Closeable;
 import java.util.logging.Level;

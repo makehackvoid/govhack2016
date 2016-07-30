@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.makehackvoid.govhack2016.Util;
+import com.makehackvoid.govhack2016.util.Util;
 
 import au.com.bytecode.opencsv.CSVReader;
 

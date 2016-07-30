@@ -1,6 +1,13 @@
 package com.makehackvoid.govhack2016.datasets.parking;
 
-public class ParkingEvent
+import com.makehackvoid.govhack2016.util.TimeBasedEvent;
+
+/**
+ * Encapsulates a parking event.
+ *
+ * @author Yiannis Paschalidis
+ */
+public class ParkingEvent implements TimeBasedEvent
 {
     public enum Type
     {
