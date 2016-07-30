@@ -1,6 +1,8 @@
 package com.makehackvoid.govhack2016.datasets.parking;
 
 import java.io.InputStreamReader;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
@@ -88,8 +90,21 @@ public class ParkingLots
         }
     }
 
+    /**
+     * Retrieves a parking lot by its lot code.
+     * @param lotCode the lot code.
+     * @return the ParkingLot for the given lot code, or null if not found.
+     */
     public static ParkingLot getLot(final int lotCode)
     {
         return LOTS_BY_LOT_CODE.get(lotCode);
+    }
+
+    /**
+     * @return a read-only view of the entire set of {@link ParkingLot}s.
+     */
+    public static Collection<ParkingLot> getLots()
+    {
+        return Collections.unmodifiableCollection(LOTS_BY_LOT_CODE.values());
     }
 }

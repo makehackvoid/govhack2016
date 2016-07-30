@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.eclipse.jetty.http.HttpStatus;
 
 import com.makehackvoid.govhack2016.api.EventApi;
+import com.makehackvoid.govhack2016.api.ParkingLotApi;
 
 /**
  * MHV Main Servlet.
@@ -26,6 +27,10 @@ public class MHVServlet extends HttpServlet
         if ("/events".equals(path))
         {
             EventApi.handle(req, resp);
+        }
+        else if ("/lots".equals(path))
+        {
+            ParkingLotApi.handle(req, resp);
         }
     }
 
