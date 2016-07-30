@@ -91,7 +91,10 @@ if (tick < 60) {
 //alert(day + " " + hour + " " + min + " " + sec);
 }
 
-
+function dtstring_to_ts(strDateTime)
+{
+	return new Date(strDateTime).getTime();
+}
 
 
 // Change current viewing time when scrubbing through the progress bar
