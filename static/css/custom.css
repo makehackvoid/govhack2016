@@ -33,5 +33,18 @@
    height:50px;
    padding:15px 15px;
    font-size:18px;
-   line-height:20px
+   line-height:20px;
+   color: #9d9d9d;
 }
+
+.video-controls{
+     padding:15px;
+     position: inherit;
+     width: 50vw;
+}
+
+.control{
+    padding:5px;
+}
+
+
