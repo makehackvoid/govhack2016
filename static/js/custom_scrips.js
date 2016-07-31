@@ -50,6 +50,14 @@ function call_me_bubbles_maybe(event_item, lot) {
     var now = date.getTime();
     if (last_bubble_since == null || now - last_bubble_since > 3000) {
         switch(event_item.eventType) {
+            case 'roadDeath':
+                last_bubble_since = now;
+                push_bubble('', event_item.age + ' year old ' +
+                        event_item.gender + ' ' + event_item.user + ' in a ' +
+                        event_item.type + ' accident in ' +
+                        event_item.state + ' (' + event_item.speedLimit +
+                        ' zone). Please drive safely!', lot);
+                break;
             case 'news':
                 last_bubble_since = now;
                 push_bubble('', event_item.headLine, lot);
