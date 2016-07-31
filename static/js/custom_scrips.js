@@ -95,9 +95,10 @@ seekbar.value = (day*24*60*60)+(hour*60*60)+(min*60)+sec
 
 var lablemap = document.getElementById("datetime_floater");
 
-lablemap.innerHTML = dtstring_to_ts_special(day,hour,min,sec)
+lablemap.innerHTML = dtstring_to_ts_special(day,hour,min,sec);
 
 
+ on_slider_change(dtstring_to_ts_special(day,hour,min,sec));
 
 }
 
