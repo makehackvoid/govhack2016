@@ -52,7 +52,7 @@ function call_me_bubbles_maybe(event_item, lot) {
         switch(event_item.eventType) {
             case 'news':
                 last_bubble_since = now;
-                push_bubble(event_item.headLine, '', lot);
+                push_bubble('', event_item.headLine, lot);
                 break;
         }
     }
