@@ -39,10 +39,31 @@ function setcount_function(){
     }
 }
 
-var last_tick_epoch_millis;
+var last_slider_epoch_millis;
+var event_list;
+var event_list_i = 0;
+var receiving_events = false;
+
+function on_slider_change(slider_epoch_millis) {
+    if (!receiving_events) {
+        if (last_slider_epoch_millis != null) {
+            receiving_events = true;
+            mhvApiGetEvents(last_slider_epoch_millis, slider_epoch_millis, function(arr) {
+                for(var i = 0; i < arr.length; i++)
+                {
+                    mhvReceiveEvent(arr[i]);
+                }
+                receiving_events = false;
+                last_slider_epoch_millis = slider_epoch_millis;
+            });
+        }
+        else {
+            last_slider_epoch_millis = slider_epoch_millis;
+        }
+    }
+}
 
 tick_function = function(){
-    var this_tick_epoch_millis;
 seekbar = document.getElementById("seek-bar");
 
 sec = sec + tick;
@@ -65,19 +86,7 @@ if (day > 31){
 }
 
     seekbar.value = (day*24*60*60)+(hour*60*60)+(min*60)+sec;
-    this_tick_epoch_millis = dtstring_to_ts_special(day,hour,min,sec);
-    if (last_tick_epoch_millis != null) {
-        mhvApiGetEvents(last_tick_epoch_millis, this_tick_epoch_millis, function(arr) {
-            var i;
-            for(i = 0; i < arr.length; i++)
-            {
-                mhvReceiveEvent(arr[i]);
-            }
-        });
-    }
-    last_tick_epoch_millis = this_tick_epoch_millis;
-
-
+    on_slider_change(dtstring_to_ts_special(day,hour,min,sec));
 }
 
 function dtstring_to_ts(strDateTime)
