@@ -68,5 +68,3 @@ function push_bubble(title,content,lotCode,timeout=3000)
 	infowindow.open(map, aMarkers[lotCode].marker);
 	setTimeout(function() {pop_the_bubble(lotCode);},3000);
 }
-
-init_markers();
