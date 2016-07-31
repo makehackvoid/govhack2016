@@ -30,7 +30,7 @@ function setcount_function(){
         blnplay = true;
         playButton.src = "images/pause_icon.png";
         playButton.alt = "Pause";
-        let int_tick = setInterval(tick_function, 1000 / fps);
+        var int_tick = setInterval(tick_function, 1000 / fps);
         int_ticks = int_tick
         //alert(int_tick);
         
