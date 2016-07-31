@@ -7,6 +7,12 @@
     background-color: silver;
 } 
 
+.jumbotron
+{
+	padding-top: 25px;
+	padding-bottom: 0;
+}
+
 #map {
     position: inherit;
     left:1px;
