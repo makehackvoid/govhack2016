@@ -98,53 +98,25 @@
 							
                             function initDataLayer()
 							{
-								mhvApiGetLots(initHeatmap);
+								initHeatMap();
                             }
-							
-							var map, heatmap;
-							var heatmapData;
-							var parkingLots = new Array();
-							
-                            function initHeatmap(parkingLotData)
-							{
-								var i;
-								
-								for (i = 0; i < parkingLotData.length; i++) 
-								{
-									parkingLots["#" + parkingLotData[i].lotCode] = [ parkingLotData[i].latitude, parkingLotData[i].longitude ];
-								}
-								
-								heatmap = new google.maps.visualization.HeatmapLayer({
-								  data: heatmapData,
-								  map: map
-								});
-								
-								heatmap.set('radius', 20);
-								heatmap.set('opacity', 0.75);
-								
-								// TEMP: For testing only - load some data
-								mhvApiGetEvents(1459432811000, 1459490000000, function(arr) 
-								{
-									var i;
-									for(i = 0; i < arr.length; i++) 
-									{
-										mhvReceiveEvent(arr[i]);
-									}
-								});
-                            }
-							
+
 							function mhvReceiveEvent(event)
 							{
-								if (event.eventType == "park" && event.type == "arrival")
-								{
-									var latLong = parkingLots["#" + event.lotCode];
-									
-									if (latLong != undefined)
-									{
-										heatmapData.push(new google.maps.LatLng(latLong[0], latLong[1]));
-									}
-								}
+								// Central area to dispatch events to different visualisations
+								addHeatMapEvent(event);
 							}
+							
+							// TEMP: For testing only - load some data when the page loads
+							// This should be driven off the seek bar
+							mhvApiGetEvents(1459432811000, 1459490000000, function(arr) 
+							{
+								var i;
+								for(i = 0; i < arr.length; i++) 
+								{
+									mhvReceiveEvent(arr[i]);
+								}
+							});
                        </script>
                   </div>
                   
@@ -193,6 +165,7 @@
     <script src="./js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./js/ie10-viewport-bug-workaround.js"></script>
+    <script src="./js/heatmap.js"></script>
      
    
     
