@@ -41,6 +41,21 @@ function setcount_function(){
     }
 }
 
+var last_bubble_since;
+
+function call_me_bubbles_maybe(event_item, lot) {
+    var date = new Date();
+    var now = date.getTime();
+    if (last_bubble_since == null || now - last_bubble_since > 3000) {
+        switch(event_item.eventType) {
+            case 'news':
+                last_bubble_since = now;
+                push_bubble(event_item.headLine, '', lot);
+                break;
+        }
+    }
+}
+
 var last_slider_epoch_millis;
 var event_list;
 var event_list_i = 0;
@@ -51,8 +66,16 @@ function on_slider_change(slider_epoch_millis) {
         if (last_slider_epoch_millis != null) {
             receiving_events = true;
             mhvApiGetEvents(last_slider_epoch_millis, slider_epoch_millis, function(arr) {
+                var last_seen_lot;
+
                 for(var i = 0; i < arr.length; i++)
                 {
+                    if (arr[i].eventType == 'park') {
+                        last_seen_lot = arr[i].lotCode;
+                    }
+                    if (last_seen_lot != null) {
+                        call_me_bubbles_maybe(arr[i], last_seen_lot);
+                    }
                     mhvReceiveEvent(arr[i]);
                 }
                 receiving_events = false;
