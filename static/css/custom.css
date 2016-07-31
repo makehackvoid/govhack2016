@@ -14,4 +14,16 @@
     height:60vw;
     }
  
- 
+#datetime_floater {
+	position: relative;
+	
+	background-color: white;
+	
+	top: 20px;
+	right: 0px;
+	
+	z-index: 999;
+	
+	width: 15vw;
+	padding-left: 5px;
+}
