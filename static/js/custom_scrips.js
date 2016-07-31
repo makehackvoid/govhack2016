@@ -47,6 +47,10 @@ var event_list_i = 0;
 var receiving_events = false;
 
 function on_slider_change(slider_epoch_millis) {
+
+    var floater = document.getElementById('datetime_floater');
+	floater.innerHTML = new Date(slider_epoch_millis);
+
     if (!receiving_events) {
         if (last_slider_epoch_millis != null) {
             receiving_events = true;
