@@ -100,6 +100,31 @@ function dtstring_rev_to_ts(strDateTime)
 	return new Date(dt.slice(0,3).reverse().join('-') + ' ' + dt[3]).getTime();
 }
 
+function dtstring_to_ts_special(day,hr,min,sec)
+{
+	var strDay = day;
+	var strMonth = "05";
+	var strYear = "2016";
+	var strHr = hr;
+	var strMin = min;
+	var strSec = sec
+	
+	if(day < 10)
+		strDay = "0" + strDay;
+	
+	if(hr < 10)
+		strHr = "0" + strHr;
+		
+	if(min < 10)
+		strMin = "0" + strMin;
+	
+	if(sec < 10)
+		strSec = "0" + strSec;
+	
+	alert(strYear + "-" + strMonth + "-" + strDay + " " + strHr + ":" + strMin + ":" + strSec);
+	
+	return new Date(strYear + "-" + strMonth + "-" + strDay + " " + strHr + ":" + strMin + ":" + strSec).getTime();
+}
 
 // Change current viewing time when scrubbing through the progress bar
 //seekBar.addEventListener('change', function() {
