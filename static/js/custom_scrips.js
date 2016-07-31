@@ -39,10 +39,7 @@ function setcount_function(){
     }
 }
 
-var last_tick_epoch_millis;
-
 tick_function = function(){
-    var this_tick_epoch_millis;
 seekbar = document.getElementById("seek-bar");
 
 sec = sec + tick;
@@ -64,18 +61,9 @@ if (day > 31){
     day = 1
 }
 
-    seekbar.value = (day*24*60*60)+(hour*60*60)+(min*60)+sec;
-    this_tick_epoch_millis = dtstring_to_ts_special(day,hour,min,sec);
-    if (last_tick_epoch_millis != null) {
-        mhvApiGetEvents(last_tick_epoch_millis, this_tick_epoch_millis, function(arr) {
-            var i;
-            for(i = 0; i < arr.length; i++)
-            {
-                mhvReceiveEvent(arr[i]);
-            }
-        });
-    }
-    last_tick_epoch_millis = this_tick_epoch_millis;
+seekbar.value = (day*24*60*60)+(hour*60*60)+(min*60)+sec
+
+
 
 
 }
@@ -113,7 +101,7 @@ function dtstring_to_ts_special(day,hr,min,sec)
 	if(sec < 10)
 		strSec = "0" + strSec;
 	
-	//alert(strYear + "-" + strMonth + "-" + strDay + " " + strHr + ":" + strMin + ":" + strSec);
+	alert(strYear + "-" + strMonth + "-" + strDay + " " + strHr + ":" + strMin + ":" + strSec);
 	
 	return new Date(strYear + "-" + strMonth + "-" + strDay + " " + strHr + ":" + strMin + ":" + strSec).getTime();
 }
