@@ -25,8 +25,9 @@ function setcount_function(){
   var playButton = document.getElementById("play-pause");
     if (blnplay == false) {
        
-        blnplay= true;
-        playButton.innerHTML = "Pause";
+        blnplay = true;
+        playButton.src = "images/pause_icon.png";
+        playButton.alt = "Pause";
         let int_tick = setInterval(tick_function,50);
         int_ticks = int_tick
         //alert(int_tick);
@@ -34,8 +35,33 @@ function setcount_function(){
                 
     }else{
         blnplay= false;
-        playButton.innerHTML = "Play";
+        playButton.src = "images/play_icon.png";
+        playButton.alt = "Play";
         clearInterval(int_ticks);
+    }
+}
+
+var last_slider_epoch_millis;
+var event_list;
+var event_list_i = 0;
+var receiving_events = false;
+
+function on_slider_change(slider_epoch_millis) {
+    if (!receiving_events) {
+        if (last_slider_epoch_millis != null) {
+            receiving_events = true;
+            mhvApiGetEvents(last_slider_epoch_millis, slider_epoch_millis, function(arr) {
+                for(var i = 0; i < arr.length; i++)
+                {
+                    mhvReceiveEvent(arr[i]);
+                }
+                receiving_events = false;
+                last_slider_epoch_millis = slider_epoch_millis;
+            });
+        }
+        else {
+            last_slider_epoch_millis = slider_epoch_millis;
+        }
     }
 }
 
@@ -66,6 +92,7 @@ seekbar.value = (day*24*60*60)+(hour*60*60)+(min*60)+sec
 var lablemap = document.getElementById("datetime_floater");
 
 lablemap.innerHTML = dtstring_to_ts_special(day,hour,min,sec)
+
 
 
 }
@@ -103,11 +130,7 @@ function dtstring_to_ts_special(day,hr,min,sec)
 	if(sec < 10)
 		strSec = "0" + strSec;
 	
-	alert(strYear + "-" + strMonth + "-" + strDay + " " + strHr + ":" + strMin + ":" + strSec);
-	
 	return new Date(strYear + "-" + strMonth + "-" + strDay + " " + strHr + ":" + strMin + ":" + strSec).getTime();
 }
 
 // Change current viewing time when scrubbing through the progress bar
-
-
