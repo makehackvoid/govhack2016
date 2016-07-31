@@ -41,6 +41,30 @@ function setcount_function(){
     }
 }
 
+var last_slider_epoch_millis;
+var event_list;
+var event_list_i = 0;
+var receiving_events = false;
+
+function on_slider_change(slider_epoch_millis) {
+    if (!receiving_events) {
+        if (last_slider_epoch_millis != null) {
+            receiving_events = true;
+            mhvApiGetEvents(last_slider_epoch_millis, slider_epoch_millis, function(arr) {
+                for(var i = 0; i < arr.length; i++)
+                {
+                    mhvReceiveEvent(arr[i]);
+                }
+                receiving_events = false;
+                last_slider_epoch_millis = slider_epoch_millis;
+            });
+        }
+        else {
+            last_slider_epoch_millis = slider_epoch_millis;
+        }
+    }
+}
+
 tick_function = function(){
 seekbar = document.getElementById("seek-bar");
 
@@ -63,11 +87,8 @@ if (day > 31){
     day = 1
 }
 
-seekbar.value = (day*24*60*60)+(hour*60*60)+(min*60)+sec
-
-
-
-
+    seekbar.value = (day*24*60*60)+(hour*60*60)+(min*60)+sec;
+    on_slider_change(dtstring_to_ts_special(day,hour,min,sec));
 }
 
 function dtstring_to_ts(strDateTime)
@@ -107,5 +128,3 @@ function dtstring_to_ts_special(day,hr,min,sec)
 }
 
 // Change current viewing time when scrubbing through the progress bar
-
-

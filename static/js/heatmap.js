@@ -27,6 +27,9 @@ function initHeatmap(parkingLotData)
 
 function addHeatMapEvent(event)
 {
+    while (heatmapData.getLength() >= 200) {
+        heatmapData.removeAt(0);
+    }
 	if (event.eventType == "park" && event.type == "arrival")
 	{
 		var latLong = parkingLots["#" + event.lotCode];
