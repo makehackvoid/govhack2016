@@ -12,7 +12,9 @@ var sec = 0;
 var min = 0;
 var hour = 0;
 var day = 1;
-var tick = 60000/20;
+var fps = 20;
+var elapsedTimePerSec = 60 * 60; // 1 hour per sec
+var tick = elapsedTimePerSec / fps;
 var timestr = null;
 var seekBar;
 //var volumeBar = document.getElementById("Speed");
@@ -28,7 +30,7 @@ function setcount_function(){
         blnplay = true;
         playButton.src = "images/pause_icon.png";
         playButton.alt = "Pause";
-        let int_tick = setInterval(tick_function,50);
+        let int_tick = setInterval(tick_function, 1000 / fps);
         int_ticks = int_tick
         //alert(int_tick);
         
@@ -62,6 +64,10 @@ var event_list_i = 0;
 var receiving_events = false;
 
 function on_slider_change(slider_epoch_millis) {
+
+    var floater = document.getElementById('datetime_floater');
+	floater.innerHTML = new Date(slider_epoch_millis);
+
     if (!receiving_events) {
         if (last_slider_epoch_millis != null) {
             receiving_events = true;
@@ -88,30 +94,36 @@ function on_slider_change(slider_epoch_millis) {
     }
 }
 
-tick_function = function(){
-seekbar = document.getElementById("seek-bar");
+tick_function = function()
+{
+	seekbar = document.getElementById("seek-bar");
 
-sec = sec + tick;
-     
- while (sec >= 60) {
-    min = min+1;
-    sec = sec - 60;
-  }
- while (min >= 60) {
-     hour = hour +1;
-     min = 0;
-   }
- while ( hour >= 24){
-      day = day +1;
-  hour = 0
-}
+	sec += tick;
+		 
+	while (sec >= 60) 
+	{
+		min++;
+		sec -= 60;
+	}
+	while (min >= 60) 
+	{
+		 hour++;
+		 min -= 60;
+	}
+	
+	while ( hour >= 24)
+	{
+		day++;
+		hour -= 24;
+	}
 
-if (day > 31){
-    day = 1
-}
+	if (day > 31)
+	{
+		day = 1;
+	}
 
-    seekbar.value = (day*24*60*60)+(hour*60*60)+(min*60)+sec;
-    on_slider_change(dtstring_to_ts_special(day,hour,min,sec));
+     seekbar.value = (day*24*60*60) + (hour*60*60) + (min*60) + sec;
+     on_slider_change(dtstring_to_ts_special(day,hour,min,sec));
 }
 
 function dtstring_to_ts(strDateTime)

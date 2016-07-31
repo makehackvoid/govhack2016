@@ -30,7 +30,7 @@
 	
 	z-index: 999;
 	
-	width: 15vw;
+	width: 100%;
 	padding-left: 5px;
 }
 
@@ -65,4 +65,9 @@
 	height: 3em;
 	margin-top: -0.75em;
 	margin-right: 0.5em;
+}
+
+.row
+{
+  text-align:justify;   
 }
