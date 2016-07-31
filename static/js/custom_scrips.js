@@ -96,7 +96,7 @@ tick_function = function()
 
 	if (day > 31)
 	{
-		day = 1
+		day = 1;
 	}
 
      seekbar.value = (day*24*60*60) + (hour*60*60) + (min*60) + sec;
