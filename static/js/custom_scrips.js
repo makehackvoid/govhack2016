@@ -103,8 +103,6 @@ function dtstring_to_ts_special(day,hr,min,sec)
 	if(sec < 10)
 		strSec = "0" + strSec;
 	
-	alert(strYear + "-" + strMonth + "-" + strDay + " " + strHr + ":" + strMin + ":" + strSec);
-	
 	return new Date(strYear + "-" + strMonth + "-" + strDay + " " + strHr + ":" + strMin + ":" + strSec).getTime();
 }
 
