@@ -87,11 +87,18 @@ function dtstring_to_ts(strDateTime)
 	return new Date(strDateTime).getTime();
 }
 
+
 function hookseek(){
   //  seekBar.addEventListener('change', function()) {
-
-    
 }
+
+function dtstring_rev_to_ts(strDateTime)
+{
+	var dt = strDateTime.split(/\-|\s/);
+	return new Date(dt.slice(0,3).reverse().join('-') + ' ' + dt[3]).getTime();
+}
+
+
 // Change current viewing time when scrubbing through the progress bar
 
 
