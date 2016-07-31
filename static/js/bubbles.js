@@ -48,17 +48,20 @@ function pop_the_bubble(lotCode)
 
 function push_bubble(title,content,lotCode,timeout=3000)
 {
+	var bubbleWidth = document.getElementById("map").offsetWidth / 2;
+
 	var contentString = '<div id="content">'+
 		'<div id="siteNotice">'+
 		'</div>'+
-		'<h3>' + title + '</h3>'+
+		'<h4>While you were parked...</h4>'+
+		'<h4>' + title + '</h4>'+
 		'<div id="bodyContent">'+
 		'<p>' + content + '</p>'+
 		'</div>'+
 		'</div>';
 
 	var infowindow = new google.maps.InfoWindow({
-	  content: contentString
+	  content: contentString, maxWidth: bubbleWidth
 	});
 	
 	aMarkers[lotCode].pop = infowindow;
