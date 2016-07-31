@@ -12,10 +12,10 @@ var sec = 0;
 var min = 0;
 var hour = 0;
 var day = 1;
-var tick = 300;
+var tick = 60000/20;
 var timestr = null;
 var seekBar;
-var volumeBar = document.getElementById("Speed");
+//var volumeBar = document.getElementById("Speed");
 //var seekbar = document.getElementById("seek-bar");
 var blnplay = false;
 
@@ -27,7 +27,7 @@ function setcount_function(){
        
         blnplay= true;
         playButton.innerHTML = "Pause";
-        let int_tick = setInterval(tick_function,3000);
+        let int_tick = setInterval(tick_function,50);
         int_ticks = int_tick
         //alert(int_tick);
         
@@ -42,41 +42,27 @@ function setcount_function(){
 tick_function = function(){
 seekbar = document.getElementById("seek-bar");
 
-if (tick < 60) {
-    //running secongs
- sec = sec + tick;
- if (sec > 60) {
-    min = min+1;
-    sec = sec - 60;
- 
-  }
- if (min > 60) {
-     hour = hour +1;
-     min = 0;
- }
- if ( hour > 24){
-  day = day +1;
-  hour = 0;
-   }
-}else if (tick > 60){   
- min = min + Math.floor(tick/60);
- sec = sec + tick % 60;
+sec = sec + tick;
      
- if (sec > 60) {
+ while (sec >= 60) {
     min = min+1;
     sec = sec - 60;
   }
- if (min > 60) {
+ while (min >= 60) {
      hour = hour +1;
      min = 0;
    }
- if ( hour > 24){
+ while ( hour >= 24){
       day = day +1;
   hour = 0
-   }
+}
+
+if (day > 31){
+    day = 1
 }
 
 seekbar.value = (day*24*60*60)+(hour*60*60)+(min*60)+sec
+
 
 
 
@@ -87,10 +73,6 @@ function dtstring_to_ts(strDateTime)
 	return new Date(strDateTime).getTime();
 }
 
-
-function hookseek(){
-  //  seekBar.addEventListener('change', function()) {
-}
 
 function dtstring_rev_to_ts(strDateTime)
 {
@@ -126,22 +108,4 @@ function dtstring_to_ts_special(day,hr,min,sec)
 
 // Change current viewing time when scrubbing through the progress bar
 
-
-
-
-// Event listener for the play/pause button
-//playButton.addEventListener("click", function() {
-//  if (blnplay.paused == true) {
-    // Play the video
- //  btnvar = settimeout(setcount_function,360000);
-    // Update the button text to 'Pause'
-  //  
-  //} else {
-    // Pause the video
-  //  blnplay.paused = true;
-
-    // Update the button text to 'Play'
-  //  playButton.innerHTML = "Play";
- // }
-//});
 
