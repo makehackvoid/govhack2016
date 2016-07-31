@@ -1,17 +1,5 @@
-window.onload = function() {
-
-  // Video
-  //var video = document.getElementById("video");
-
- 
-  
-  // Sliders
-  var seekBar = document.getElementById("seek-bar");
-  var volumeBar = document.getElementById("Speed");
-
-} 
 var count =0;
-var int_tick = null;
+var int_ticks = null;
 
 gettime = function(){
 var seekBar = document.getElementById("seek-bar");
@@ -26,7 +14,9 @@ var hour = 0;
 var day = 1;
 var tick = 300;
 var timestr = null;
-
+var seekBar;
+var volumeBar = document.getElementById("Speed");
+//var seekbar = document.getElementById("seek-bar");
 var blnplay = false;
 
 //setcount_function = function(){
@@ -38,18 +28,19 @@ function setcount_function(){
         blnplay= true;
         playButton.innerHTML = "Pause";
         let int_tick = setInterval(tick_function,3000);
+        int_ticks = int_tick
         //alert(int_tick);
         
                 
     }else{
         blnplay= false;
         playButton.innerHTML = "Play";
-        clearInterval(int_tick);
+        clearInterval(int_ticks);
     }
 }
 
 tick_function = function(){
-  var seekbar = document.getElementById("seek-bar");
+seekbar = document.getElementById("seek-bar");
 
 if (tick < 60) {
     //running secongs
@@ -87,11 +78,18 @@ if (tick < 60) {
 
 seekbar.value = (day*24*60*60)+(hour*60*60)+(min*60)+sec
 
+
+
 }
 
 function dtstring_to_ts(strDateTime)
 {
 	return new Date(strDateTime).getTime();
+}
+
+
+function hookseek(){
+  //  seekBar.addEventListener('change', function()) {
 }
 
 function dtstring_rev_to_ts(strDateTime)
@@ -127,12 +125,7 @@ function dtstring_to_ts_special(day,hr,min,sec)
 }
 
 // Change current viewing time when scrubbing through the progress bar
-//seekBar.addEventListener('change', function() {
-    // Calculate the new time
-//    var time = video.duration * (seekBar.value / 100);
-    // Update the video time
-  //  video.currentTime = time;
-//});
+
 
 
 

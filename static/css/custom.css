@@ -1,5 +1,6 @@
 .jsblock {
     position: inherit;
+    right:1em;
     top 80px;
     width: 25vw;
     height: 100%;
@@ -8,9 +9,10 @@
 
 #map {
     position: inherit;
+    left:1px;
     width:50vw;
     height:60vw;
- }
+    }
  
 #datetime_floater {
 	position: relative;
