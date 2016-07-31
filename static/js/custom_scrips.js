@@ -25,8 +25,9 @@ function setcount_function(){
   var playButton = document.getElementById("play-pause");
     if (blnplay == false) {
        
-        blnplay= true;
-        playButton.innerHTML = "Pause";
+        blnplay = true;
+        playButton.src = "images/pause_icon.png";
+        playButton.alt = "Pause";
         let int_tick = setInterval(tick_function,50);
         int_ticks = int_tick
         //alert(int_tick);
@@ -34,7 +35,8 @@ function setcount_function(){
                 
     }else{
         blnplay= false;
-        playButton.innerHTML = "Play";
+        playButton.src = "images/play_icon.png";
+        playButton.alt = "Play";
         clearInterval(int_ticks);
     }
 }
